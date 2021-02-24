@@ -157,7 +157,8 @@
 ;; org section
 
 (use-package org
-  :straight t)
+  :custom
+  (org-directory (expand-file-name "~/Documents/org")))
 
 (use-package org-roam
   :straight t

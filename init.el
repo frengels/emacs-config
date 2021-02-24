@@ -25,8 +25,7 @@
 (setq straight-use-package-by-default t)
 (straight-use-package 'use-package)
 
-(use-package use-package-hydra
-  :straight t)
+(use-package use-package-hydra)
 
 (use-package paredit
   :hook
@@ -37,21 +36,16 @@
   (lisp-interaction-mode . enable-paredit-mode)
   (scheme-mode . enable-paredit-mode))
 
-(use-package gitignore-mode
-  :straight t)
+(use-package gitignore-mode)
 
-(use-package gitconfig-mode
-  :straight t)
+(use-package gitconfig-mode)
 
-(use-package gitattributes-mode
-  :straight t)
+(use-package gitattributes-mode)
 
 (use-package magit
-  :straight t
   :bind ("C-x g" . magit-status))
 
 (use-package company
-  :straight t
   :defer 3
   :bind (:map company-active-map
 	      ; not sure about these bindings, they could interfere with movement
@@ -63,12 +57,10 @@
   (global-company-mode t))
 
 (use-package swiper
-  :straight t
   :bind (("C-s" . swiper-isearch)
 	 ("C-r" . swiper-isearch-backward)))
 
 (use-package ivy
-  :straight t
   :custom
   (ivy-use-virtual-buffers t)
   (ivy-count-format "%d/%d ")
@@ -76,38 +68,31 @@
   (ivy-mode))
 
 (use-package counsel
-  :straight t
   :config
   (counsel-mode))
 
-(use-package hydra
-  :straight t)
+(use-package hydra)
 
 (use-package avy
-  :straight t
   :bind (("M-g g" . avy-goto-line)
 	 ("M-g w" . avy-goto-word-1)))
 
 (use-package which-key
-  :straight t
   :diminish which-key-mode
   :init
   (which-key-mode))
 
 (use-package doom-modeline
-  :straight t
   :init
   (setq doom-modeline-indent-info t)
   :hook
   (after-init . doom-modeline-mode))
 
 (use-package treemacs
-  :straight t
   :init
   (setq treemacs-user-mode-line-format 'none))
 
 (use-package ace-window
-  :straight t
   :after (hydra)
   :bind (("C-;" . hydra-window/body))
   :hydra (hydra-window (:color blue :hint nil)
@@ -148,11 +133,9 @@
 		       ("<up>" nil)
 		       ("<right>" nil)))
 
-(use-package markdown-mode
-  :straight t)
+(use-package markdown-mode)
 
-(use-package projectile
-  :straight t)
+(use-package projectile)
 
 ;; org section
 
@@ -161,7 +144,6 @@
   (org-directory (expand-file-name "~/Documents/org")))
 
 (use-package org-roam
-  :straight t
   :hook
   (after-init . org-roam-mode)
   :custom

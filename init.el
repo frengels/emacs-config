@@ -6,6 +6,8 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 
+(setq ring-bell-function 'ignore)
+
 (setq custom-file (concat user-emacs-directory "custom-file.el"))
 (when (file-exists-p custom-file) (load-file custom-file))
 

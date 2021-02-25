@@ -179,6 +179,8 @@
 
 (use-package cmake-mode)
 
+(use-package rmsbolt)
+
 ;; org section
 
 (use-package org-plus-contrib

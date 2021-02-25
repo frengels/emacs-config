@@ -2,3 +2,5 @@
 .cache/
 *.db
 eln-cache/
+bookmarks
+recentf

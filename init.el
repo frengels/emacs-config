@@ -179,12 +179,26 @@
 
 ;; org section
 
-(use-package org
+(use-package org-plus-contrib
+  :bind (("C-c o A" . org-agenda))
   :custom
-  (org-directory (expand-file-name "~/Documents/org")))
+  (org-directory (expand-file-name "~/org"))
+  (org-agenda-files (concat (file-name-as-directory org-directory) "todo.org")))
+
+(use-package org-journal
+  :after org
+  :custom
+  (org-journal-dir (expand-file-name "~/org/journal"))
+  (org-journal-file-type 'weekly)
+  (org-journal-enable-agenda-integration t))
 
 (use-package org-roam
+  :after org
   :hook
   (after-init . org-roam-mode)
   :custom
-  (org-roam-directory (expand-file-name "~/Documents/org-roam")))
+  (org-roam-directory (expand-file-name "~/org/roam")))
+
+(use-package org-bullets
+  :hook
+  (org-mode . (lambda () (org-bullets-mode 1))))

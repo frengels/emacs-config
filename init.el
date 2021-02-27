@@ -175,6 +175,8 @@
   :commands format-all-buffer
   :bind (("C-c f" . format-all-buffer)))
 
+(use-package cmake-mode)
+
 ;; org section
 
 (use-package org

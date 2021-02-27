@@ -78,8 +78,7 @@
 (use-package hydra)
 
 (use-package avy
-  :bind (("M-g g" . avy-goto-line)
-	 ("M-g w" . avy-goto-word-1)))
+  :bind (("C-c w" . avy-goto-word-1)))
 
 (use-package which-key
   :defer 5

@@ -63,6 +63,7 @@
 	 ("C-r" . swiper-isearch-backward)))
 
 (use-package ivy
+  :bind (("C-c C-r" . ivy-resume))
   :custom
   (ivy-use-virtual-buffers t)
   (ivy-count-format "%d/%d ")

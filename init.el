@@ -90,6 +90,7 @@
   (after-init . doom-modeline-mode))
 
 (use-package treemacs
+  :bind (("C-c t" . treemacs))
   :init
   (setq treemacs-user-mode-line-format 'none))
 

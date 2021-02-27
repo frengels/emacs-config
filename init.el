@@ -49,7 +49,7 @@
 (use-package company
   :defer 3
   :bind (:map company-active-map
-	      ; not sure about these bindings, they could interfere with movement
+					; not sure about these bindings, they could interfere with movement
 	      ("C-n" . company-select-next)
 	      ("C-p" . company-select-previous))
   :init
@@ -79,6 +79,7 @@
 	 ("M-g w" . avy-goto-word-1)))
 
 (use-package which-key
+  :defer 5
   :diminish which-key-mode
   :init
   (which-key-mode))
@@ -137,7 +138,40 @@
 
 (use-package markdown-mode)
 
-(use-package projectile)
+(use-package ripgrep)
+
+(use-package projectile
+  :after ripgrep
+  :custom
+  (projectile-indexing-method 'alien)
+  (projectile-require-project-root t)
+  (projectile-completion-system 'ivy)
+  :bind (:map projectile-mode-map
+	      (("C-c p" . projectile-command-map)))
+  :config
+  (projectile-mode +1))
+
+(use-package flycheck)
+
+(use-package lsp-treemacs
+  :after (lsp-mode treemacs))
+
+(use-package lsp-ivy
+  :after (lsp-mode ivy))
+
+(use-package lsp-ui
+  :after lsp-mode)
+
+(use-package lsp-mode
+  :commands lsp
+  :custom
+  (lsp-keymap-prefix "C-c l"))
+
+(use-package dap-mode)
+
+(use-package format-all
+  :commands format-all-buffer
+  :bind (("C-c f" . format-all-buffer)))
 
 ;; org section
 

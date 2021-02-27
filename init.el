@@ -52,8 +52,9 @@
 					; not sure about these bindings, they could interfere with movement
 	      ("C-n" . company-select-next)
 	      ("C-p" . company-select-previous))
-  :init
-  (setq company-idle-delay 0.3)
+  :custom
+  (company-idle-delay 0.3)
+  (company-minimum-prefix-length 1)
   :config
   (global-company-mode t))
 

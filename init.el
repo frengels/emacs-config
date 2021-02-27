@@ -43,7 +43,8 @@
 (use-package gitattributes-mode)
 
 (use-package magit
-  :bind ("C-x g" . magit-status))
+  :bind ("C-x g" . magit-status)
+  ("C-c g" . magit-file-dispatch))
 
 (use-package company
   :defer 3

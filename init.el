@@ -60,7 +60,8 @@
 
 (use-package swiper
   :bind (("C-s" . swiper-isearch)
-	 ("C-r" . swiper-isearch-backward)))
+	 ("C-r" . swiper-isearch-backward)
+	 ("C-c s s" . swiper)))
 
 (use-package ivy
   :bind (("C-c C-r" . ivy-resume))

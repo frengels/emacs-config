@@ -11,21 +11,25 @@
 (setq custom-file (concat user-emacs-directory "custom-file.el"))
 (when (file-exists-p custom-file) (load-file custom-file))
 
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 5))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-	(url-retrieve-synchronously
-	 "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-	 'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
+(require 'package)
 
-(setq straight-use-package-by-default t)
-(straight-use-package 'use-package)
+(setq package-archives
+      '(
+	("org" . "https://orgmode.org/elpa/")
+	("gnu" . "https://elpa.gnu.org/packages/")
+	("melpa" . "https://melpa.org/packages/")))
+
+(package-initialize)
+
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+(require 'use-package-ensure)
+(setq use-package-always-ensure t)
 
 (use-package use-package-hydra)
 

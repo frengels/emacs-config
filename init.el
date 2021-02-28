@@ -162,6 +162,7 @@
   (projectile-indexing-method 'alien)
   (projectile-require-project-root t)
   (projectile-completion-system 'ivy)
+  (projectile-project-search-path '("~/project"))
   :bind (:map projectile-mode-map
 	      (("C-c p" . projectile-command-map)))
   :config

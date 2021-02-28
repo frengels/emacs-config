@@ -200,7 +200,7 @@
   :bind (("C-c o A" . org-agenda))
   :custom
   (org-directory (expand-file-name "~/org"))
-  (org-agenda-files (concat (file-name-as-directory org-directory) "todo.org")))
+  (org-agenda-files `(,org-directory)))
 
 (use-package org-journal
   :after org

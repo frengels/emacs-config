@@ -54,6 +54,8 @@
 					; not sure about these bindings, they could interfere with movement
 	      ("C-n" . company-select-next)
 	      ("C-p" . company-select-previous))
+  (:map lsp-mode-map
+	("<tab>" . company-indent-or-complete-common))
   :custom
   (company-idle-delay 0.0)
   (company-minimum-prefix-length 1)

@@ -157,7 +157,6 @@
   (c++-mode . modern-c++-font-lock-mode))
 
 (use-package projectile
-  :after ripgrep
   :custom
   (projectile-indexing-method 'alien)
   (projectile-require-project-root t)

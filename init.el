@@ -51,9 +51,7 @@
 (use-package company
   :defer 3
   :bind (:map company-active-map
-					; not sure about these bindings, they could interfere with movement
-	      ("C-n" . company-select-next)
-	      ("C-p" . company-select-previous))
+	      ("<tab>" . company-complete-selection))
   (:map lsp-mode-map
 	("<tab>" . company-indent-or-complete-common))
   :custom

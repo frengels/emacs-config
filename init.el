@@ -210,5 +210,6 @@
   (org-roam-prefer-id-links t))
 
 (use-package org-bullets
+  :disabled t
   :hook
   (org-mode . (lambda () (org-bullets-mode 1))))

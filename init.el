@@ -164,8 +164,8 @@
   (projectile-project-search-path '("~/project"))
   :bind (:map projectile-mode-map
 	      (("C-c p" . projectile-command-map)))
-  :config
-  (projectile-mode +1))
+  :init
+  (projectile-global-mode))
 
 (use-package flycheck)
 

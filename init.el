@@ -144,6 +144,10 @@
 
 (use-package ripgrep)
 
+(use-package modern-cpp-font-lock
+  :hook
+  (c++-mode . modern-c++-font-lock-mode))
+
 (use-package projectile
   :after ripgrep
   :custom

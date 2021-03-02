@@ -217,3 +217,10 @@
   :disabled t
   :hook
   (org-mode . (lambda () (org-bullets-mode 1))))
+
+
+(use-package yasnippet
+  :config
+  (yas-global-mode 1))
+
+(use-package yasnippet-snippets)

@@ -60,6 +60,10 @@
   :config
   (global-company-mode t))
 
+(use-package company-box
+  :disabled t
+  :hook (company-mode . company-box-mode))
+
 (use-package swiper
   :bind (("C-s" . swiper-isearch)
 	 ("C-r" . swiper-isearch-backward)

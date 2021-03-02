@@ -55,7 +55,7 @@
 	      ("C-n" . company-select-next)
 	      ("C-p" . company-select-previous))
   :custom
-  (company-idle-delay 0.3)
+  (company-idle-delay 0.0)
   (company-minimum-prefix-length 1)
   :config
   (global-company-mode t))

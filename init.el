@@ -173,7 +173,8 @@
 (use-package lsp-mode
   :commands lsp
   :custom
-  (lsp-keymap-prefix "C-c l"))
+  (lsp-keymap-prefix "C-c l")
+  (lsp-enable-which-key-integration t))
 
 (use-package dap-mode)
 

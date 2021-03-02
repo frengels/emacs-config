@@ -206,7 +206,8 @@
   :hook
   (after-init . org-roam-mode)
   :custom
-  (org-roam-directory (expand-file-name "~/org/roam")))
+  (org-roam-directory (expand-file-name "~/org/roam"))
+  (org-roam-prefer-id-links t))
 
 (use-package org-bullets
   :hook

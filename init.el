@@ -77,7 +77,7 @@
   :hook (company-mode . company-box-mode))
 
 (use-package swiper
-  :bind (("C-s" . swiper-isearch)
+  :bind (("C-s" . swiper)
 	 ("C-r" . swiper-isearch-backward)
 	 ("C-c s s" . swiper)))
 

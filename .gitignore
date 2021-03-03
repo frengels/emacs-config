@@ -8,3 +8,6 @@ transient/
 projectile-bookmarks.eld
 straight/
 elpa/
+.lsp-session-*
+.dap-breakpoints
+eshell/

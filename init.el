@@ -7,8 +7,9 @@
 (scroll-bar-mode -1)
 
 (setq ring-bell-function 'ignore)
+(fset 'yes-or-no-p 'y-or-n-p)
 
-(setq custom-file (concat user-emacs-directory "custom-file.el"))
+(setq custom-file (concat user-emacs-directory "custom.el"))
 (when (file-exists-p custom-file) (load-file custom-file))
 
 (require 'package)

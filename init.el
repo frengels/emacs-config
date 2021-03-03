@@ -34,6 +34,13 @@
 
 (use-package use-package-hydra)
 
+(use-package doom-themes
+  :custom
+  (doom-theme-enable-bold t)
+  (doom-theme-enable-italic t)
+  :config
+  (load-theme 'doom-one t))
+
 (use-package paredit
   :hook
   (emacs-lisp-mode . enable-paredit-mode)
@@ -229,3 +236,4 @@
   (yas-global-mode 1))
 
 (use-package yasnippet-snippets)
+

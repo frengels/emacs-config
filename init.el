@@ -196,7 +196,16 @@
 
 (use-package format-all
   :commands format-all-buffer
-  :bind (("C-c f" . format-all-buffer)))
+  :bind (("C-c f" . format-all-buffer))
+  :init
+  (define-format-all-formatter clang-format-9
+    (:executable "clang-format-9")
+    (:install)
+    (:languages "C" "C#" "C++" "GLSL" "Java" "Objective-C" "Protocol Buffer")
+    (:format
+     (format-all--buffer-easy
+      executable))))
+
 
 (use-package cmake-mode)
 
@@ -236,4 +245,3 @@
   (yas-global-mode 1))
 
 (use-package yasnippet-snippets)
-

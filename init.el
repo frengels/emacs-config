@@ -41,7 +41,28 @@
   :config
   (load-theme 'doom-one t))
 
+(use-package evil
+  :bind (:map evil-motion-state-map
+	      (";" . evil-ex)
+	      (":" . evil-repeat-find-char))
+  :config
+  (evil-mode))
+
+(use-package evil-collection
+  :after evil
+  :config
+  (evil-collection-init))
+
+(use-package evil-escape
+  :after evil
+  :custom
+  (evil-escape-key-sequence "fd")
+  (evil-escape-delay 0.125)
+  :config
+  (evil-escape-mode))
+
 (use-package paredit
+  :disabled t
   :hook
   (emacs-lisp-mode . enable-paredit-mode)
   (eval-expression-minibuffer-setup . enable-paredit-mode)
@@ -197,7 +218,7 @@
 (use-package format-all
   :commands format-all-buffer
   :bind (("C-c f" . format-all-buffer))
-  :init
+  :config
   (define-format-all-formatter clang-format-9
     (:executable "clang-format-9")
     (:install)

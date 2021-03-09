@@ -45,7 +45,9 @@
   :bind (:map evil-motion-state-map
 	      (";" . evil-ex)
 	      (":" . evil-repeat-find-char))
-  :config
+  :custom
+  (evil-want-keybinding nil)
+  :init
   (evil-mode))
 
 (use-package evil-collection

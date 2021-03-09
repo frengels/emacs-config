@@ -11,3 +11,4 @@ elpa/
 .lsp-session-*
 .dap-breakpoints
 eshell/
+session.*

@@ -6,9 +6,10 @@
  '(custom-safe-themes
    (quote
     ("f4876796ef5ee9c82b125a096a590c9891cec31320569fc6ff602ff99ed73dca" default)))
+ '(org-agenda-files (quote ("/home/frederik/org/journal/20210308")) nil nil "Customized with use-package org-plus-contrib")
  '(package-selected-packages
    (quote
-    (evil-escape evil-collection evil yasnippet-snippets which-key use-package-hydra rmsbolt ripgrep projectile paredit org-roam org-plus-contrib org-journal modern-cpp-font-lock magit lsp-ui lsp-ivy gitignore-mode gitconfig-mode gitattributes-mode format-all flycheck doom-themes doom-modeline dap-mode counsel company cmake-mode))))
+    (deft evil-escape evil-collection evil yasnippet-snippets which-key use-package-hydra rmsbolt ripgrep projectile paredit org-roam org-plus-contrib org-journal modern-cpp-font-lock magit lsp-ui lsp-ivy gitignore-mode gitconfig-mode gitattributes-mode format-all flycheck doom-themes doom-modeline dap-mode counsel company cmake-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

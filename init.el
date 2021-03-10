@@ -257,6 +257,8 @@
   (org-roam-directory (expand-file-name "~/org/roam"))
   (org-roam-prefer-id-links t))
 
+(use-package deft)
+
 (use-package org-bullets
   :disabled t
   :hook

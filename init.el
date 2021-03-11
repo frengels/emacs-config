@@ -1,10 +1,29 @@
 ;; -*- lexical-binding: t; -*-
 
+(set-language-environment "UTF-8")
+
+(setq inhibit-startup-screen t)
 (setq inhibit-startup-message t)
+(setq inhibit-startup-echo-area-message t)
+(setq initial-scratch-message nil)
+(setq initial-major-mode 'org-mode)
+(setq-default indent-tabs-mode nil)
+(setq pop-up-windows nil)
 
 (tool-bar-mode -1)
+(tooltip-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
+
+(blink-cursor-mode 0)
+
+(auto-save-visited-mode)
+;; avoid #files#
+(setq create-lockfiles nil)
+;; avoid files~
+(setq make-backup-files nil)
+
+(show-paren-mode)
 
 (setq ring-bell-function 'ignore)
 (fset 'yes-or-no-p 'y-or-n-p)

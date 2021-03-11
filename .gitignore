@@ -1,5 +1,5 @@
 # Ignore everything by default
-*
+/*
 # What follows is the whitelist
 !init.el
 !.gitignore

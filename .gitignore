@@ -3,5 +3,6 @@
 # What follows is the whitelist
 !init.el
 !.gitignore
+!README.org
 
 

@@ -255,7 +255,12 @@
   (org-journal-enable-agenda-integration t))
 
 (use-package org-roam
-  :after org
+  :bind
+  (("C-c o r r" . org-roam-buffer-toggle-display)
+   ("C-c o r i" . org-roam-insert)
+   ("C-c o r f" . org-roam-find-file)
+   ("C-c o r b" . org-roam-switch-to-buffer)
+   ("C-c o r d" . org-roam-find-directory))
   :hook
   (after-init . org-roam-mode)
   :custom

@@ -55,6 +55,11 @@
   :config
   (evil-collection-init))
 
+(use-package evil-avy
+  :after (evil avy)
+  :config
+  (evil-avy-mode))
+
 (use-package evil-escape
   :after evil
   :custom

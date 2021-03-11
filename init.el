@@ -248,7 +248,7 @@
   (org-agenda-files `(,org-directory)))
 
 (use-package org-journal
-  :after org
+  :after org-plus-contrib
   :custom
   (org-journal-dir (expand-file-name "~/org/journal"))
   (org-journal-file-type 'weekly)

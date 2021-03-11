@@ -1,14 +1,7 @@
-*~
-.cache/
-*.db
-eln-cache/
-bookmarks
-recentf
-transient/
-projectile-bookmarks.eld
-straight/
-elpa/
-.lsp-session-*
-.dap-breakpoints
-eshell/
-session.*
+# Ignore everything by default
+*
+# What follows is the whitelist
+!init.el
+!.gitignore
+
+

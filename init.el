@@ -260,7 +260,13 @@
   (after-init . org-roam-mode)
   :custom
   (org-roam-directory (expand-file-name "~/org/roam"))
-  (org-roam-prefer-id-links t))
+  (org-roam-prefer-id-links t)
+  (org-roam-capture-templates
+   `(("d" "default" plain (function org-roam-capture--get-point)
+      "%?"
+      :file-name "%<%Y%m%d>-${slug}"
+      :head "#+title: ${title}\n"
+      :unnarrows t))))
 
 (use-package deft)
 

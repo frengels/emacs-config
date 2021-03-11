@@ -279,14 +279,25 @@
   (after-init . org-roam-mode)
   :custom
   (org-roam-directory (expand-file-name "~/org/roam"))
-  (org-roam-prefer-id-links t))
+  (org-roam-prefer-id-links t)
+  :config
+  (require 'org-protocol)
+  (require 'org-roam-protocol))
 
-(use-package deft)
+(use-package deft
+  :custom
+  (deft-default-extension "org"))
 
 (use-package org-bullets
   :disabled t
   :hook
   (org-mode . (lambda () (org-bullets-mode 1))))
+
+(use-package olivetti
+  :custom
+  (olivetti-body-width 80)
+  :hook
+  (text-mode . olivetti-mode))
 
 
 (use-package yasnippet

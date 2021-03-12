@@ -69,6 +69,11 @@
   :init
   (evil-mode))
 
+(use-package evil-surround
+  :after evil
+  :config
+  (global-evil-surround-mode 1))
+
 (use-package evil-collection
   :after evil
   :config
@@ -280,6 +285,12 @@
   :custom
   (org-roam-directory (expand-file-name "~/org/roam"))
   (org-roam-prefer-id-links t)
+  (org-roam-capture-templates
+   `(("d" "default" plain (function org-roam-capture--get-point)
+      "%?"
+      :file-name "%<%Y%m%d>-${slug}"
+      :head "#+title: ${title}\n"
+      :unnarrows t)))
   :config
   (require 'org-protocol)
   (require 'org-roam-protocol))

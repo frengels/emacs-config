@@ -290,6 +290,11 @@
       "%?"
       :file-name "%<%Y%m%d>-${slug}"
       :head "#+title: ${title}\n"
+      :unnarrows t)
+     ("p" "people" plain (function org-roam-capture--get-point)
+      "%?"
+      :file-name "${slug}"
+      :head "#+title: ${title}\n"
       :unnarrows t)))
   :config
   (require 'org-protocol)

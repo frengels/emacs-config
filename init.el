@@ -271,6 +271,14 @@
   (org-directory (expand-file-name "~/org"))
   (org-agenda-files `(,org-directory)))
 
+(use-package evil-org
+  :after org-plus-contrib
+  :hook
+  (org-mode . evil-org-mode)
+  :config
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
+
 (use-package org-journal
   :after org-plus-contrib
   :custom

@@ -166,7 +166,10 @@
 
 (use-package ace-window
   :after (hydra)
-  :bind (("C-;" . hydra-window/body))
+  :custom
+  (aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+  :bind (("C-;" . hydra-window/body)
+         ("<M-return>" . ace-window))
   :hydra (hydra-window (:color blue :hint nil)
 		       "
     Movement^   ^Split^       ^Switch^     ^^^Resize^

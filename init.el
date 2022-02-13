@@ -25,6 +25,8 @@
 
 (show-paren-mode)
 
+(global-hl-line-mode) ; I enjoy seeing the current active line
+
 (setq ring-bell-function 'ignore)
 (fset 'yes-or-no-p 'y-or-n-p)
 

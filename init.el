@@ -275,28 +275,27 @@
 
 (use-package org-roam
   :bind
-  (("C-c o r r" . org-roam-buffer-toggle-display)
-   ("C-c o r i" . org-roam-insert)
-   ("C-c o r f" . org-roam-find-file)
-   ("C-c o r b" . org-roam-switch-to-buffer)
-   ("C-c o r d" . org-roam-find-directory)
+  (("C-c o r r" . org-roam-buffer-toggle)
+   ("C-c o r i" . org-roam-node-insert)
+   ("C-c o r f" . org-roam-node-find)
    ("C-c o r c" . org-roam-capture))
   :hook
   (after-init . org-roam-mode)
   :custom
   (org-roam-directory (expand-file-name "~/org/roam"))
   (org-roam-prefer-id-links t)
-  (org-roam-capture-templates
-   `(("d" "default" plain (function org-roam-capture--get-point)
-      "%?"
-      :file-name "%<%Y%m%d>-${slug}"
-      :head "#+title: ${title}\n"
-      :unnarrows t)
-     ("p" "people" plain (function org-roam-capture--get-point)
-      "%?"
-      :file-name "${slug}"
-      :head "#+title: ${title}\n"
-      :unnarrows t)))
+                                        ;(org-roam-capture-templates
+                                        ; `(("d" "default" plain (function org-roam-capture--get-point)
+                                        ;    "%?"
+                                        ;    :file-name "%<%Y%m%d>-${slug}"
+                                        ;    :head "#+title: ${title}\n"
+                                        ;    :unnarrows t)
+                                        ;   ("p" "people" plain (function org-roam-capture--get-point)
+                                        ;    "%?"
+                                        ;    :file-name "${slug}"
+                                        ;    :head "#+title: ${title}\n"
+                                        ;    :unnarrows t)))
+  (org-roam-v2-ack t)
   :config
   (require 'org-protocol)
   (require 'org-roam-protocol))

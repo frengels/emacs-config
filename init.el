@@ -99,11 +99,7 @@
   (lisp-interaction-mode . enable-paredit-mode)
   (scheme-mode . enable-paredit-mode))
 
-(use-package gitignore-mode)
-
-(use-package gitconfig-mode)
-
-(use-package gitattributes-mode)
+(use-package git-modes)
 
 (use-package magit
   :bind ("C-x g" . magit-status)

@@ -217,7 +217,7 @@
   (projectile-indexing-method 'alien)
   (projectile-require-project-root t)
   (projectile-completion-system 'ivy)
-  (projectile-project-search-path '("~/project"))
+  (projectile-project-search-path '("~/projects"))
   :bind (:map projectile-mode-map
 	      (("C-c p" . projectile-command-map)))
   :init

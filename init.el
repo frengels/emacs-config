@@ -225,17 +225,18 @@
 
 (use-package flycheck)
 
-(use-package lsp-treemacs
-  :after (lsp-mode treemacs))
+(use-package lsp-treemacs)
 
-(use-package lsp-ivy
-  :after (lsp-mode ivy))
+(use-package lsp-ivy)
 
 (use-package lsp-ui
   :after lsp-mode)
 
 (use-package lsp-mode
   :commands lsp
+  :hook
+  (c-mode . lsp-deferred)
+  (c++-mode . lsp-deferred)
   :custom
   (lsp-keymap-prefix "C-c l")
   (lsp-enable-which-key-integration t))

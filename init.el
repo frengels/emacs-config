@@ -233,7 +233,7 @@
   :after lsp-mode)
 
 (use-package lsp-mode
-  :commands lsp
+  :commands (lsp lsp-deferred)
   :hook
   (c-mode . lsp-deferred)
   (c++-mode . lsp-deferred)

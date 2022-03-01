@@ -63,6 +63,7 @@
   (load-theme 'doom-one t))
 
 (use-package evil
+  :disabled
   :bind (:map evil-motion-state-map
 	      (";" . evil-ex)
 	      (":" . evil-repeat-find-char))
@@ -72,16 +73,19 @@
   (evil-mode))
 
 (use-package evil-surround
+  :disabled
   :after evil
   :config
   (global-evil-surround-mode 1))
 
 (use-package evil-collection
+  :disabled
   :after evil
   :config
   (evil-collection-init))
 
 (use-package evil-escape
+  :disabled
   :after evil
   :custom
   (evil-escape-key-sequence "fd")
@@ -90,7 +94,7 @@
   (evil-escape-mode))
 
 (use-package paredit
-  :disabled t
+  :disabled
   :hook
   (emacs-lisp-mode . enable-paredit-mode)
   (eval-expression-minibuffer-setup . enable-paredit-mode)
@@ -269,6 +273,7 @@
   (org-agenda-files `(,org-directory)))
 
 (use-package evil-org
+  :disabled
   :after org-plus-contrib
   :hook
   (org-mode . evil-org-mode)

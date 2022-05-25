@@ -222,6 +222,7 @@
   (projectile-require-project-root t)
   (projectile-completion-system 'ivy)
   (projectile-project-search-path '("~/projects"))
+  (projectile-enable-cmake-presets 't)
   :bind (:map projectile-mode-map
 	      (("C-c p" . projectile-command-map)))
   :init

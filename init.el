@@ -37,7 +37,6 @@
 
 (setq package-archives
       '(
-	("org" . "https://orgmode.org/elpa/")
 	("gnu" . "https://elpa.gnu.org/packages/")
 	("melpa" . "https://melpa.org/packages/")))
 
@@ -131,7 +130,9 @@
 	 ("C-c s s" . swiper)))
 
 (use-package ivy
-  :bind (("C-c C-r" . ivy-resume))
+  :bind (("C-c C-r" . ivy-resume)
+         ("C-c v" . ivy-push-view)
+         ("C-c V" . ivy-pop-view))
   :custom
   (ivy-use-virtual-buffers t)
   (ivy-count-format "%d/%d ")
@@ -268,7 +269,7 @@
 ;; org section
 
 (use-package org-plus-contrib
-  :bind (("C-c o A" . org-agenda))
+  :bind (("C-c o a" . org-agenda))
   :custom
   (org-directory (expand-file-name "~/org"))
   (org-agenda-files `(,org-directory)))
@@ -326,6 +327,7 @@
   (org-mode . (lambda () (org-bullets-mode 1))))
 
 (use-package olivetti
+  :disabled t
   :custom
   (olivetti-body-width 80)
   :hook

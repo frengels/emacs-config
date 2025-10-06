@@ -307,6 +307,8 @@
    ("C-c o r i" . org-roam-node-insert)
    ("C-c o r f" . org-roam-node-find)
    ("C-c o r c" . org-roam-capture))
+  :init
+  (setq org-roam-v2-ack t)
   :hook
   (after-init . org-roam-mode)
   :custom
@@ -325,8 +327,10 @@
                                         ;    :unnarrows t)))
   (org-roam-v2-ack t)
   :config
+  (require 'org-roam-dailies)
   (require 'org-protocol)
-  (require 'org-roam-protocol))
+  (require 'org-roam-protocol)
+  (org-roam-db-autosync-mode))
 
 (use-package deft
   :custom

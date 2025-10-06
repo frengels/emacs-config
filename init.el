@@ -268,11 +268,22 @@
 
 ;; org section
 
-(use-package org-plus-contrib
-  :bind (("C-c o a" . org-agenda))
+(use-package org
+  :bind (("C-c o a" . org-agenda)
+         ("C-c o c" . org-capture))
   :custom
   (org-directory (expand-file-name "~/org"))
-  (org-agenda-files `(,org-directory)))
+  (org-default-notes-file "~/org/tasks.org")
+  (org-agenda-files `(,org-directory))
+  :config
+  (add-to-list 'org-capture-templates
+               '("t" "Personal Task" entry
+                 (file "~/org/tasks.org")
+                 "* TODO %?" :empty-lines 1))
+  (add-to-list 'org-capture-templates
+               '("w" "Work-related Task" entry
+                 (file "~/org/roam/work/tasks.org")
+                 "* TODO %?" :empty-lines 1)))
 
 (use-package evil-org
   :disabled
@@ -342,3 +353,4 @@
 
 (use-package all-the-icons
   :if (display-graphic-p))
+

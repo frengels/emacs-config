@@ -295,11 +295,14 @@
   (evil-org-agenda-set-keys))
 
 (use-package org-journal
-  :after org-plus-contrib
+  :after org
+  :bind
+  (("C-c o j n" . org-journal-new-entry))
   :custom
   (org-journal-dir (expand-file-name "~/org/journal"))
   (org-journal-file-type 'weekly)
-  (org-journal-enable-agenda-integration t))
+  (org-journal-enable-agenda-integration t)
+  (org-journal-file-format "%Y-%m-%d.org"))
 
 (use-package org-roam
   :bind

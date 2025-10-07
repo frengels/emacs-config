@@ -287,7 +287,7 @@
 
 (use-package evil-org
   :disabled
-  :after org-plus-contrib
+  :after org
   :hook
   (org-mode . evil-org-mode)
   :config
@@ -305,16 +305,20 @@
   (org-journal-file-format "%Y-%m-%d.org"))
 
 (use-package org-roam
+  :after org
   :bind
-  (("C-c o r r" . org-roam-buffer-toggle)
-   ("C-c o r i" . org-roam-node-insert)
-   ("C-c o r f" . org-roam-node-find)
-   ("C-c o r c" . org-roam-capture))
-  :init
-  (setq org-roam-v2-ack t)
+  (("C-c o r f" . org-roam-node-find)
+   ("C-c o r r" . org-roam-node-random)
+   (:map org-mode-map
+         (("C-c o r l" . org-roam-buffer-toggle)
+          ("C-c o r i" . org-roam-node-insert)
+          ("C-c o r f" . org-roam-node-find)
+          ("C-c o r c" . org-roam-capture)
+          ("C-c o r a" . org-roam-alias-add))))
   :hook
   (after-init . org-roam-mode)
   :custom
+  (org-roam-v2-ack t)
   (org-roam-directory (expand-file-name "~/org/roam"))
   (org-roam-prefer-id-links t)
                                         ;(org-roam-capture-templates
@@ -334,6 +338,14 @@
   (require 'org-protocol)
   (require 'org-roam-protocol)
   (org-roam-db-autosync-mode))
+
+(use-package org-roam-ui
+  :after org-roam
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start t))
 
 (use-package deft
   :custom

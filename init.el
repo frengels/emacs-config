@@ -323,6 +323,9 @@
   :hook
   (after-init . org-roam-mode)
   :custom
+  (org-roam-dailies-capture-templates
+   '(("d" "default" entry "* %<%H:%M>: %?"
+      :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n"))))
   (org-roam-v2-ack t)
   (org-roam-directory (expand-file-name "~/org/roam"))
   (org-roam-prefer-id-links t)

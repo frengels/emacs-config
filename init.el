@@ -309,12 +309,17 @@
   :bind
   (("C-c o r f" . org-roam-node-find)
    ("C-c o r r" . org-roam-node-random)
-   (:map org-mode-map
-         (("C-c o r l" . org-roam-buffer-toggle)
-          ("C-c o r i" . org-roam-node-insert)
-          ("C-c o r f" . org-roam-node-find)
-          ("C-c o r c" . org-roam-capture)
-          ("C-c o r a" . org-roam-alias-add))))
+   :map org-mode-map
+   ("C-c o r l" . org-roam-buffer-toggle)
+   ("C-c o r i" . org-roam-node-insert)
+   ("C-c o r f" . org-roam-node-find)
+   ("C-c o r c" . org-roam-capture)
+   ("C-c o r a" . org-roam-alias-add)
+   :map org-roam-dailies-map
+   ("Y" . org-roam-dailies-capture-yesterday)
+   ("T" . org-roam-dailies-capture-tomorrow))
+  :bind-keymap
+  ("C-c o r d" . org-roam-dailies-map)
   :hook
   (after-init . org-roam-mode)
   :custom

@@ -36,8 +36,7 @@
 (require 'package)
 
 (setq package-archives
-      '(
-	("gnu" . "https://elpa.gnu.org/packages/")
+      '(("gnu" . "https://elpa.gnu.org/packages/")
 	("melpa" . "https://melpa.org/packages/")))
 
 (package-initialize)
@@ -109,11 +108,12 @@
   ("C-c g" . magit-file-dispatch))
 
 (use-package company
+  :disabled t
   :defer 3
   :bind (:map company-active-map
 	      ("<tab>" . company-complete-selection))
-  (:map lsp-mode-map
-	("<tab>" . company-indent-or-complete-common))
+;  (:map lsp-mode-map
+;	("<tab>" . company-indent-or-complete-common))
   :custom
   (company-idle-delay 0.0)
   (company-minimum-prefix-length 1)
@@ -356,6 +356,7 @@
         org-roam-ui-open-on-start t))
 
 (use-package deft
+  :disabled t
   :custom
   (deft-default-extension "org"))
 
@@ -373,11 +374,13 @@
 
 
 (use-package yasnippet
+  :disabled t
   :config
   (yas-global-mode 1))
 
 (use-package yasnippet-snippets)
 
 (use-package all-the-icons
+  :disabled t
   :if (display-graphic-p))
 
